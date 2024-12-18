@@ -1,0 +1,48 @@
+<!-- Carrusel de videojuegos -->
+<p-carousel [value]="games" [numVisible]="3" [numScroll]="1" [responsiveOptions]="responsiveOptions" [circular]="true">
+    <ng-template let-game pTemplate="item">
+        <div class="game-item p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+            <div class="mb-4 overflow-hidden rounded-lg">
+                <img [src]="game.image" [alt]="game.name" class="w-full h-64 object-cover object-center rounded-lg" />
+            </div>
+            <div class="game-detail text-center">
+                <h4 class="text-xl font-semibold text-gray-800 mb-2">{{ game.name }}</h4>
+                <p class="text-lg text-gray-600 mb-3">Plataforma: {{ game.platform }}</p>
+                <p class="text-lg text-gray-600 mb-3">Precio: ${{ game.price }}</p>
+                <p class="text-sm text-gray-500 mb-3">{{ game.description }}</p>
+                <p-rating [(ngModel)]="game.rating" [cancel]="false" [stars]="5" [readonly]="true" class="mb-3"></p-rating>
+                <p-button label="Comprar" icon="pi pi-shopping-cart" styleClass="p-button-rounded p-button-outlined" class="ml-2" (click)="onBuyGame(game)"></p-button>
+            </div>
+        </div>
+    </ng-template>
+</p-carousel>
+
+<!-- Tabla de videojuegos -->
+<p-table [value]="games" responsiveLayout="scroll" class="mt-10" [paginator]="true" [rows]="5">
+    <ng-template pTemplate="header">
+        <tr>
+            <th pSortableColumn="name">Nombre <p-sortIcon field="name"></p-sortIcon></th>
+            <th pSortableColumn="platform">Plataforma <p-sortIcon field="platform"></p-sortIcon></th>
+            <th pSortableColumn="price">Precio <p-sortIcon field="price"></p-sortIcon></th>
+            <th>Estado</th>
+            <th>Acciones</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-game>
+        <tr>
+            <td>
+                <img [src]="game.image" [alt]="game.name" class="img-table" />
+            </td>
+            <td>{{ game.name }}</td>
+            <td>${{ game.price }}</td>
+            <td><p-tag [value]="game.status" [severity]="getSeverity(game.status)"></p-tag></td>
+            <td>
+                <p-button icon="pi pi-heart" severity="secondary" [outlined]="true" class="p-button-rounded p-button-outlined"></p-button>
+                <p-button icon="pi pi-shopping-cart" styleClass="p-button-rounded p-button-outlined ml-2" (click)="onBuyGame(game)"></p-button>
+            </td>
+        </tr>
+    </ng-template>
+</p-table>
+
+<!-- Toast para notificaciones -->
+<p-toast></p-toast>

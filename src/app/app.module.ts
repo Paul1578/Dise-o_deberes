@@ -17,6 +17,16 @@ import { AutoCompleteModule } from 'primeng/autocomplete';
 import { TagModule } from 'primeng/tag';
 import { CarouselModule } from 'primeng/carousel';
 import { Deber5Component } from './components/deber-5/deber-5.component';
+import { ExamenComponent } from './components/examen/examen.component';
+import { TableModule } from 'primeng/table';
+import { ToastModule } from 'primeng/toast';
+import { DialogModule } from 'primeng/dialog';
+import { RatingModule } from 'primeng/rating';
+import { MenubarModule } from 'primeng/menubar';
+import { MessageService } from 'primeng/api';
+import { DropdownModule } from 'primeng/dropdown';
+import { PanelModule } from 'primeng/panel';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -27,7 +37,8 @@ import { Deber5Component } from './components/deber-5/deber-5.component';
     CardsComponent,
     HomeComponent,
     Deber4Component,
-    Deber5Component
+    Deber5Component,
+    ExamenComponent
   ],
   imports: [
     BrowserModule,
@@ -40,9 +51,19 @@ import { Deber5Component } from './components/deber-5/deber-5.component';
     AutoCompleteModule,
     ReactiveFormsModule,
     CarouselModule,
-    TagModule
+    TagModule,
+    TableModule,
+    ToastModule,
+    DialogModule,
+    RatingModule,
+    MenubarModule,
+    DropdownModule,
+    PanelModule,
+    BrowserAnimationsModule 
+    
+      
   ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

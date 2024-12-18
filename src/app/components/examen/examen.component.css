@@ -1,0 +1,30 @@
+/* Estilos del carrusel */
+.game-item {
+    width: 100%;
+    max-width: 300px;
+}
+
+.game-detail {
+    padding: 1rem;
+}
+
+/* Estilos de la tabla */
+.img-table {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Ajustes de los botones */
+.p-button-rounded {
+    border-radius: 50px;
+}
+
+/* Estilo del Toast */
+.p-toast {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 9999;
+}
