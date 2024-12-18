@@ -11,6 +11,13 @@ import { ButtonModule } from 'primeng/button';
 import { HomeComponent } from './components/home/home.component';
 import { AvatarModule } from 'primeng/avatar';
 import { ToolbarModule } from 'primeng/toolbar';
+import { Deber4Component } from './components/deber-4/deber-4.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AutoCompleteModule } from 'primeng/autocomplete';
+import { TagModule } from 'primeng/tag';
+import { CarouselModule } from 'primeng/carousel';
+import { Deber5Component } from './components/deber-5/deber-5.component';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +25,9 @@ import { ToolbarModule } from 'primeng/toolbar';
     Grid1Component,
     Grid2Component,
     CardsComponent,
-    HomeComponent
+    HomeComponent,
+    Deber4Component,
+    Deber5Component
   ],
   imports: [
     BrowserModule,
@@ -26,7 +35,12 @@ import { ToolbarModule } from 'primeng/toolbar';
     CardModule, 
     ButtonModule,
     ToolbarModule, 
-    AvatarModule
+    AvatarModule,
+    FormsModule,
+    AutoCompleteModule,
+    ReactiveFormsModule,
+    CarouselModule,
+    TagModule
   ],
   providers: [],
   bootstrap: [AppComponent]
